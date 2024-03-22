@@ -1,26 +1,28 @@
 'use client'
 
-// Importa il provider di sessioni da `next-auth/react`
+// Importa la libreria `SessionProvider` da `next-auth/react`
 import { SessionProvider } from 'next-auth/react'
 
-// Importa `ReactNode` da React
+// Importa il tipo `ReactNode` da `react`
 import { ReactNode } from 'react';
 
-// Definisce l'interfaccia `PropsType` che richiede una proprietà `children` di tipo `ReactNode`
+// Definisce l'interfaccia `PropsType` che estende `ReactNode`
 interface PropsType {
-    children: ReactNode;
+  children: ReactNode;
 }
 
-// La funzione `AuthProvider` accetta un oggetto `props` di tipo `PropsType`
-const AuthProvider = ({children}: PropsType ) => {
-
-  // Restituisce un componente `SessionProvider` che avvolge i figli
+// La funzione `AuthProvider` accetta un oggetto di props di tipo `PropsType`
+const AuthProvider = ({ children }: PropsType) => {
+  // Ritorna un componente `SessionProvider` che avvolge un componente `AuthProvider`
+  // che a sua volta avvolge i figli passati come props
   return (
     <SessionProvider>
+      <AuthProvider>
         {children}
+      </AuthProvider>
     </SessionProvider>
   )
-}
+};
 
 // Esporta il componente `AuthProvider` come default
-export default AuthProvider
+export default AuthProvider;
