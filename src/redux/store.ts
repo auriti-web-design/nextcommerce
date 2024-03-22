@@ -9,7 +9,7 @@ import productsReducer from "./features/productsSlice";
 export const store = configureStore({
   // Riduttore: definisce lo stato iniziale e come lo stato cambia in risposta alle azioni
   reducer: {
-    cart: cartReducer, // Gestisce lo stato del carrello
+    cartReducer, // Gestisce lo stato del carrello
     products: productsReducer, // Gestisce lo stato dei prodotti
     loading: loadingReducer, // Gestisce lo stato di caricamento
   },
