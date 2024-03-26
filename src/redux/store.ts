@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 // Importa i reducer
 import cartReducer from "./features/cartSlice";
 import loadingReducer from "./features/loadingSlice";
-import productsReducer from "./features/productsSlice";
+import productsReducer from "./features/productSlice";
 
 // Esporta lo store Redux creato con configureStore
 export const store = configureStore({
