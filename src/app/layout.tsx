@@ -7,6 +7,7 @@ import AuthProvider from "@/components/admin-panel/AuthProvider";
 
 // Importa il componente principale dell'applicazione App
 import App from "./App";
+import { Toaster } from "react-hot-toast";
 
 // Definizione del font Inter con subset latino
 const inter = Inter({ subsets: ["latin"] });
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </App>
         </AuthProvider>
+        <Toaster position="bottom-center" reverseOrder={false} />
       </body>
     </html>
   );
